@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GitUserSearch</string>
+    <string name="app_name">Git User Search</string>
 
     <string name="label_bio">Bio</string>
     <string name="label_location">Location</string>
