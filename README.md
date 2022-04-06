@@ -1,4 +1,4 @@
-# GitUserSearch
+# Git User Search
 
 The App uses a set of Android Jetpack libraries plus Retrofit to search users and display its details by using GitHUB API. The App uses Kotlin.
 
