@@ -1,6 +1,6 @@
 # GitUserSearch
 
-The App uses a set of Android Jetpack libraries plus Retrofit to dispay data from REST API(Unsplash). The App uses Kotlin.
+The App uses a set of Android Jetpack libraries plus Retrofit to search users and display its details by using GitHUB API. The App uses Kotlin.
 
 ### Prerequisites
 
