@@ -8,7 +8,7 @@ The project has all required dependencies in the gradle files.
 Add the Project to Android Studio or Intelij and build.
 All the required dependencies will be downloaded and installed.
 
-####Important : You need to add the token you got from GitHub in the api.properties file.
+#### Important : You need to add the token you got from GitHub in the api.properties file.
 
 ## Architecture
 
