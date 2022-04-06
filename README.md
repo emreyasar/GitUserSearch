@@ -24,3 +24,6 @@ navigation between fragments
 * [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview?hl=in) - Allow pagination of the Data.
 * [Retrofit](https://square.github.io/retrofit/) - To access the Rest Api
 * [Mockk](https://mockk.io/) - To mocking objects for testing
+
+
+Developed by Emre Yasar [`@emreyasar`](https://www.linkedin.com/in/emreyasar/)
