@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.yasaremre.gitusersearch.network.model.GitHubUserDTO" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin8"
+        android:paddingTop="@dimen/margin8"
+        android:paddingEnd="@dimen/margin8">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_user_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/list_item_user_image_view"
+                android:layout_width="@dimen/user_list_image_width"
+                android:layout_height="@dimen/user_list_image_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="@dimen/margin12"
+                app:imageUrl="@{user.avatar_url}"
+                android:visibility='@{ (user.avatar_url != null &amp;&amp; !user.avatar_url.equals("")) ? View.VISIBLE : View.GONE}'
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/list_item_user_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/list_item_user_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/TextStyle.Bold.14"
+                android:layout_marginStart="@dimen/margin12"
+                android:layout_marginBottom="@dimen/margin4"
+                android:layout_marginEnd="@dimen/margin12"
+                android:text="@{user.login}"
+                tools:text="Lorem ipsum dolor sit amet." />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/list_item_user_url"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/list_item_user_login"
+                app:layout_constraintStart_toStartOf="@id/list_item_user_login"
+                app:layout_constraintEnd_toEndOf="@id/list_item_user_login"
+                style="@style/TextStyle.12"
+                android:text="@{user.html_url}"
+                tools:text="https://github.com/foo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/list_item_user_separator"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@drawable/shape_rectangle"
+            app:layout_constraintStart_toStartOf="@id/list_item_user_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_item_user_layout"
+            android:layout_marginTop="@dimen/margin10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

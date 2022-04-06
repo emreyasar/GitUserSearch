@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.yasaremre.gitusersearch.ui.search.SearchFragment"
+        android:label="Search User"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.yasaremre.gitusersearch.ui.detail.DetailFragment"
+        android:label="User Detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="userName"
+            app:argType="string"/>
+    </fragment>
+
+</navigation>

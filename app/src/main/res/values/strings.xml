@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GitUserSearch</string>
+
+    <string name="label_bio">Bio</string>
+    <string name="label_location">Location</string>
+    <string name="label_company">Company</string>
+    <string name="label_blog">Blog</string>
+    <string name="button_text_retry">Retry</string>
+    <string name="text_error_occurred">An error occurred</string>
+    <string name="text_no_results_found">No results found :(</string>
+
 </resources>

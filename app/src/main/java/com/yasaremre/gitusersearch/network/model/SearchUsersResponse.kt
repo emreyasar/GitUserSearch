@@ -1,7 +1,12 @@
 package com.yasaremre.gitusersearch.network.model
 
+import com.squareup.moshi.Json
+
 data class SearchUsersResponse(
+    @Json(name = "totalCount")
     val totalCount: Int? = null,
+    @Json(name = "incompleteResults")
     val incompleteResults: Boolean? = null,
-    val items: ArrayList<GitHubUserDTO>
+    @Json(name = "items")
+    val items: List<GitHubUserDTO> = listOf()
 )

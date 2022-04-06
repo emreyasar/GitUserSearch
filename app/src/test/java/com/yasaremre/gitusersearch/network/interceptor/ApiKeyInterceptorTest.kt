@@ -1,28 +1,22 @@
 package com.yasaremre.gitusersearch.network.interceptor
 
+import com.yasaremre.gitusersearch.BaseUnitTest
 import com.yasaremre.gitusersearch.BuildConfig
 import io.mockk.*
-import junit.framework.TestCase
 import okhttp3.Interceptor
 import okhttp3.Request
-import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-class ApiKeyInterceptorTest : TestCase() {
+class ApiKeyInterceptorTest : BaseUnitTest() {
 
     lateinit var interceptor: ApiKeyInterceptor
 
     @Before
-    public override fun setUp() {
+    override fun setUp() {
         super.setUp()
         interceptor = ApiKeyInterceptor()
-    }
-
-    @After
-    public override fun tearDown() {
-        unmockkAll()
     }
 
     @Test

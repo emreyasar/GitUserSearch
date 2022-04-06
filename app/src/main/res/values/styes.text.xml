@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextStyle" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextStyle.10">
+        <item name="android:textSize">10dp</item>
+    </style>
+    <style name="TextStyle.11">
+        <item name="android:textSize">11dp</item>
+    </style>
+    <style name="TextStyle.12">
+        <item name="android:textSize">12dp</item>
+    </style>
+    <style name="TextStyle.14">
+        <item name="android:textSize">14dp</item>
+    </style>
+    <style name="TextStyle.16">
+        <item name="android:textSize">16dp</item>
+    </style>
+    <style name="TextStyle.18">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <!-- BOLD -->
+    <style name="TextStyle.Bold">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="TextStyle.Bold.14">
+        <item name="android:textSize">14dp</item>
+    </style>
+    <style name="TextStyle.Bold.16">
+        <item name="android:textSize">16dp</item>
+    </style>
+    <style name="TextStyle.Bold.18">
+        <item name="android:textSize">18dp</item>
+    </style>
+    <style name="TextStyle.Bold.20">
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="TextStyle.Bold.24">
+        <item name="android:textSize">24dp</item>
+    </style>
+    <style name="TextStyle.Bold.28">
+        <item name="android:textSize">28dp</item>
+    </style>
+
+    <!-- LIGHT -->
+    <style name="TextStyle.Light">
+        <item name="android:fontFamily">@font/opensans_light</item>
+        <item name="fontFamily">@font/opensans_light</item>
+    </style>
+
+    <style name="TextStyle.Light.10">
+        <item name="android:textSize">10dp</item>
+    </style>
+    <style name="TextStyle.Light.12">
+        <item name="android:textSize">12dp</item>
+    </style>
+    <style name="TextStyle.Light.14">
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <!-- ITALIC -->
+    <style name="TextStyle.Italic">
+        <item name="android:fontFamily">@font/opensans_italic</item>
+        <item name="fontFamily">@font/opensans_italic</item>
+    </style>
+
+    <style name="TextStyle.Italic.12">
+        <item name="android:textSize">12dp</item>
+    </style>
+
+</resources>
