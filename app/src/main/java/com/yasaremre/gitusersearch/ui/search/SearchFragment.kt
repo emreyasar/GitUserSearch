@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yasaremre.gitusersearch.R
@@ -25,6 +26,9 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
+/**
+ * Fragment responsible for displaying the search bar and listing the results
+ * */
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
 
@@ -76,7 +80,8 @@ class SearchFragment : Fragment() {
         }, UserComparator)
 
         adapter.addLoadStateListener { loadState ->
-            val isEmptyList = loadState.refresh is LoadState.NotLoading && adapter.itemCount == 0
+            // If user made a search and searchText value is not null and itemCount = 0
+            val isEmptyList = loadState.refresh is LoadState.NotLoading && adapter.itemCount == 0 && !viewModel.searchText.value.isNullOrEmpty()
             binding.noResultFoundTextView.isVisible = isEmptyList
             // Only show the list if refresh succeeds
             binding.userListRecyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
@@ -113,11 +118,22 @@ class SearchFragment : Fragment() {
         }
     }
 
+    private fun resetAdapter() {
+        adapter.submitData(lifecycle, PagingData.empty())
+        binding.noResultFoundTextView.isVisible = false
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.options_menu, menu)
 
         val searchItem: MenuItem = menu.findItem(R.id.action_search)
         val searchView: SearchView = searchItem.actionView as SearchView
+
+        // If there is a search query written before, open the searchView and write the query
+        if (!viewModel.searchText.value.isNullOrEmpty()) {
+            searchItem.expandActionView()
+            searchView.setQuery(viewModel.searchText.value, false)
+        }
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
@@ -127,8 +143,15 @@ class SearchFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                viewModel.searchText.value = newText
-                return false
+                if (isVisible) {
+                    if (newText.isEmpty()) {
+                        // Reset RecyclerView on empty text
+                        resetAdapter()
+                    }
+                    viewModel.searchText.value = newText
+                    return false
+                }
+                return true
             }
         })
 
