@@ -25,5 +25,8 @@ navigation between fragments
 * [Retrofit](https://square.github.io/retrofit/) - To access the Rest Api
 * [Mockk](https://mockk.io/) - To mocking objects for testing
 
+## Screenshots
+|<img src="screenshots/1.png" width=200/>|<img src="screenshots/2.png" width=200/>|<img src="screenshots/3.png" width=200/>|<img src="screenshots/5.png" width=200/>
+
 
 Developed by Emre Yasar [`@emreyasar`](https://www.linkedin.com/in/emreyasar/)
