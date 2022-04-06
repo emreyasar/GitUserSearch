@@ -8,7 +8,7 @@ import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.Response
 import kotlin.math.min
 
-/*
+/**
  * This class was written to mock the network service to test the paging3 library.
  * https://developer.android.com/topic/libraries/architecture/paging/test
  */

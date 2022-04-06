@@ -21,9 +21,7 @@ class SearchViewModel @Inject constructor(
 
     private var currentSearchResult: Flow<PagingData<GitHubUserDTO>>? = null
 
-    /*
-    * If the same query sent as the last search operation, return the previous existing one results.
-    * */
+    // If the same query sent as the last search operation, return the previous existing one results.
     fun searchUsers(query: String): Flow<PagingData<GitHubUserDTO>> {
         val lastResult = currentSearchResult
         if (query == currentSearchQuery && lastResult != null) {

@@ -4,9 +4,10 @@ import android.view.ViewGroup
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 
-// Adapter that displays a loading spinner when
-// state is LoadState.Loading, and an error message and retry
-// button when state is LoadState.Error.
+/** Adapter that displays a loading spinner when
+* state is LoadState.Loading, and an error message and retry
+* button when state is LoadState.Error.
+ * */
 class SearchListLoadStateAdapter(
     private val retry: () -> Unit
 ) : LoadStateAdapter<LoadStateViewHolder>() {

@@ -10,7 +10,9 @@ import androidx.navigation.fragment.navArgs
 import com.yasaremre.gitusersearch.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
+/**
+ * Fragment showing detailed information of the user selected as a result of the search
+ * */
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 

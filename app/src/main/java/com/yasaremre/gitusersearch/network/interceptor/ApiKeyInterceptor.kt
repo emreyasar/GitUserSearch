@@ -4,6 +4,11 @@ import com.yasaremre.gitusersearch.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
+/**
+ * This interceptor adds "Authorization:Token XXXXXXX" to the header
+ * of the requests sent to the url specified by API_BASE_URL.
+ * */
+
 class ApiKeyInterceptor : Interceptor {
     companion object {
         const val AUTHORIZATION_HEADER_KEY = "Authorization"
